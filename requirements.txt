@@ -1,0 +1,8 @@
+-e .
+python-dotenv
+pydantic
+openai
+pymupdf
+chromadb
+colorlog
+streamlit
