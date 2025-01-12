@@ -24,10 +24,23 @@ class VectorManager():
         
     def create_collection(self):
         try:
-            collection = self.client.get_collection(self.collection_name)
-            logger.info(f"Collection '{self.collection_name}' already exists.")
+            collection = self.client.create_collection(
+                name=self.collection_name,
+                metadata={
+                    "created_at": datetime.now().isoformat(),
+                    "hnsw:space": self.space,
+                    "hnsw:construction_ef": self.construction_ef,
+                    "hnsw:search_ef": self.search_ef,
+                    "hnsw:M": self.max_neighbors
+                }
+            )
+            logger.info(f"Created collection '{self.collection_name}'.")
             return collection
         except Exception as e:
+            collection = self.client.get_collection(self.collection_name)
+            logger.info(f"Collection '{self.collection_name}' already exists.")
+            self.client.delete_collection(self.collection_name)
+            logger.info(f"Deleted collection '{self.collection_name}'.")
             collection = self.client.create_collection(
                 name=self.collection_name,
                 metadata={

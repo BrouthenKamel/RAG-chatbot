@@ -3,7 +3,9 @@ from vector_manager import VectorManager
 from llm import LLM
 
 document_parser = DocumentParser()
-document_path = "./data/manuscript.pdf"
+file_name = "sample.pdf"
+# file_name = "df8de2f1-d26d-46b6-944f-450b71b4cd97.pdf"
+document_path = f"./data/{file_name}"
 document = document_parser.read_document(document_path=document_path)
 chunked_document = document_parser.create_chunks(document=document)
 
