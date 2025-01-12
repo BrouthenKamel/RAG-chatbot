@@ -1,5 +1,6 @@
 import re
 from utils.models import SearchResult, ChatHistory
+from config.config import SUMMARIZATION_SIZE
 
 def clean_text(text: str, keep_newline: bool = False) -> str:
     if keep_newline:
@@ -31,6 +32,6 @@ def format_chat_history(chat_history: ChatHistory) -> str:
         formatted_history += "\n"
     return formatted_history
 
-def summarize(text: str, size: int = 5) -> str:
+def summarize(text: str, size: int = SUMMARIZATION_SIZE) -> str:
     words = text.split()
     return " ".join(words[:size]) + "..." if len(words) > size else text

@@ -1,11 +1,11 @@
-from datetime import datetime
-
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-import chromadb
-from config.config import COLLECTION_NAME, SPACE, CONSTRUCTION_EF, SEARCH_EF, MAX_NEIGHBORS
 
+import chromadb
+from config.config import COLLECTION_NAME, SPACE, CONSTRUCTION_EF, SEARCH_EF, MAX_NEIGHBORS, TOP_K
+
+from datetime import datetime
 from utils.models import ChunkedDocument, SearchResult
 from utils.textual import summarize
 
@@ -82,7 +82,7 @@ class VectorManager():
         )
         logger.info(f"Indexed {len(ids)} Chunks.")
         
-    def query(self, query_text: str, n_results=5):
+    def query(self, query_text: str, n_results=TOP_K) -> SearchResult:
         collection = self.client.get_collection(self.collection_name)
         
         logger.debug(f"Query: '{summarize(query_text)}'")
@@ -92,11 +92,12 @@ class VectorManager():
         )
         
         n_search = len(results['ids']) if results != {} else 0
-        logger.info(f"Queried collection '{self.collection_name}', Retrived {n_search} contexts.")
         
         if n_search == 0:
+            logger.info(f"Queried collection '{self.collection_name}', Retrived no context.")
             return SearchResult(distances=[], documents=[])
         else:
+            logger.info(f"Queried collection '{self.collection_name}', Retrived {n_search} context.")
             result = SearchResult(
                 distances = results['distances'][0],
                 documents = results['documents'][0]
