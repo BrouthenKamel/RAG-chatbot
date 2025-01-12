@@ -1,5 +1,8 @@
 from datetime import datetime
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import chromadb
 from config import COLLECTION_NAME, SPACE, CONSTRUCTION_EF, SEARCH_EF, MAX_NEIGHBORS
 
@@ -17,8 +20,8 @@ class VectorManager():
         self.search_ef = SEARCH_EF
         self.max_neighbors = MAX_NEIGHBORS
         
-        # self.client = chromadb.PersistentClient()
-        self.client = chromadb.Client()
+        self.client = chromadb.PersistentClient()
+        # self.client = chromadb.Client()
         self.collection_name = COLLECTION_NAME
         
         logger.info("Initialized Vector Manager.")
