@@ -3,6 +3,7 @@ python-dotenv
 pydantic
 openai
 pymupdf
+sqlite3 >= 3.35.0
 chromadb
 colorlog
 streamlit
