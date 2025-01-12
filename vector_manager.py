@@ -17,7 +17,8 @@ class VectorManager():
         self.search_ef = SEARCH_EF
         self.max_neighbors = MAX_NEIGHBORS
         
-        self.client = chromadb.PersistentClient()
+        # self.client = chromadb.PersistentClient()
+        self.client = chromadb.Client()
         self.collection_name = COLLECTION_NAME
         
         logger.info("Initialized Vector Manager.")
