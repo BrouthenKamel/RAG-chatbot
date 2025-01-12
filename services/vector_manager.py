@@ -4,12 +4,12 @@ __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import chromadb
-from config import COLLECTION_NAME, SPACE, CONSTRUCTION_EF, SEARCH_EF, MAX_NEIGHBORS
+from config.config import COLLECTION_NAME, SPACE, CONSTRUCTION_EF, SEARCH_EF, MAX_NEIGHBORS
 
-from models import ChunkedDocument, SearchResult
-from utils import summarize
+from utils.models import ChunkedDocument, SearchResult
+from utils.textual import summarize
 
-from log import get_logger
+from utils.log import get_logger
 logger = get_logger("Vector Manager")
 
 class VectorManager():

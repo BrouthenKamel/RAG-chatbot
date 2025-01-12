@@ -1,5 +1,5 @@
-from models import SearchResult, ChatHistory
-from utils import format_search_results, format_chat_history
+from utils.models import SearchResult, ChatHistory
+from utils.textual import format_search_results, format_chat_history
 
 def system_prompt():
     return "You are a helpful assistant."

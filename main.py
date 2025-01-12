@@ -1,6 +1,6 @@
-from document_parser import DocumentParser
-from vector_manager import VectorManager
-from llm import LLM
+from services.document_parser import DocumentParser
+from services.vector_manager import VectorManager
+from services.llm import LLM
 
 document_parser = DocumentParser()
 file_name = "sample.pdf"

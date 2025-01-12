@@ -1,5 +1,5 @@
 import re
-from models import SearchResult, ChatHistory
+from utils.models import SearchResult, ChatHistory
 
 def clean_text(text: str, keep_newline: bool = False) -> str:
     if keep_newline:

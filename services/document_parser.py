@@ -1,9 +1,9 @@
 import fitz
-from models import Page, Document, ChunkedPage, ChunkedDocument
-from utils import clean_text
-from config import CHUNK_SIZE, OVERLAP
+from utils.models import Page, Document, ChunkedPage, ChunkedDocument
+from utils.textual import clean_text
+from config.config import CHUNK_SIZE, OVERLAP
 
-from log import get_logger
+from utils.log import get_logger
 logger = get_logger("Document Parser")
 
 class DocumentParser():

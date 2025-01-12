@@ -1,13 +1,13 @@
 from openai import OpenAI
-from keys import OPENAI_API_KEY
-from config import LLM_MODEL, LLM_TEMPERATURE
+from config.keys import OPENAI_API_KEY
+from config.config import LLM_MODEL, LLM_TEMPERATURE
 
-from prompts import system_prompt, user_prompt
-from models import SearchResult, ChatHistory, Interaction
+from utils.prompts import system_prompt, user_prompt
+from utils.models import SearchResult, ChatHistory, Interaction
 
-from utils import summarize
+from utils.textual import summarize
 
-from log import get_logger
+from utils.log import get_logger
 logger = get_logger("LLM")
 
 class LLM():
