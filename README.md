@@ -84,3 +84,4 @@ Once the app is running, you can upload a PDF document and start interacting wit
 - [OpenAI API Documentation](https://platform.openai.com/docs/overview)
 - [Streamlit Website](https://streamlit.io/)
 - [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
+- [Project Report](https://kamel-brouthen.notion.site/Vector-Databases-Use-Case-Project-1787584d62c2801a912bc28057a83608)
