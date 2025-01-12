@@ -82,4 +82,5 @@ Once the app is running, you can upload a PDF document and start interacting wit
 - [Deployed RAG Chatbot Application](https://brouthenkamel-rag-chatbot-app-xbvwju.streamlit.app/)
 - [Chroma Documentation](https://docs.trychroma.com/docs/overview/introduction)
 - [OpenAI API Documentation](https://platform.openai.com/docs/overview)
+- [Streamlit Website](https://streamlit.io/)
 - [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
