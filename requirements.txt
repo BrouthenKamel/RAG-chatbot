@@ -1,8 +1,9 @@
 -e .
 python-dotenv
 pydantic
-openai
 pymupdf
+pysqlite3-binary
 chromadb
+openai
 colorlog
 streamlit
