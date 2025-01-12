@@ -2,7 +2,7 @@
 python-dotenv
 pydantic
 pymupdf
-pysqlite3-binary
+pysqlite3-binary # see https://stackoverflow.com/questions/76958817/streamlit-your-system-has-an-unsupported-version-of-sqlite3-chroma-requires-sq
 chromadb
 openai
 colorlog
