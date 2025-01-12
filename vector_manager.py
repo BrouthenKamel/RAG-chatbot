@@ -4,7 +4,6 @@ import chromadb
 from config import COLLECTION_NAME, SPACE, CONSTRUCTION_EF, SEARCH_EF, MAX_NEIGHBORS
 
 from models import ChunkedDocument, SearchResult
-from embedder import openai_embedding
 from utils import summarize
 
 from log import get_logger

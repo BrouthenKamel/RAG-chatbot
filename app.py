@@ -48,11 +48,9 @@ if query:
     else:
         st.warning("Please upload a document first!")
 
-# Chat History Section
 if st.session_state["chat_history"]:
     st.header("Chat History")
     for entry in st.session_state["chat_history"]:
-        # Using markdown for better formatting
         st.markdown(f"**You:** {entry['query']}")
         st.markdown(f"**AI:** {entry['response']}")
-        st.markdown("---")  # Adding a separator between messages for clarity
+        st.markdown("---")
